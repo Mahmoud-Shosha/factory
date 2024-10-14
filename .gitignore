@@ -1,0 +1,59 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# PyCharm specific
+.idea/
+*.iml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Test and coverage
+.coverage
+.coverage.*
+nosetests.xml
+*.cover
+*.log
+*.sqlite3
+
+# Pytest
+.cache
+pytest_cache/
+
+# Local environment variables
+.env
+*.env
+
+# VS Code specific
+.vscode/
+
+# MacOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbs.db (Windows)
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
