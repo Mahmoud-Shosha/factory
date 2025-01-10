@@ -30,10 +30,10 @@ EXPOSE 8069
 # Use CMD to pass database connection parameters
 # CMD ["--db_host=${DB_HOST}", "--db_port=${DB_PORT}", "--db_user=${DB_USER}", "--db_password=${DB_PASSWORD}"]
 
-# sudo  docker login --username AWS -p $(aws ecr get-login-password --region us-east-1)  https://023481417683.dkr.ecr.us-east-1.amazonaws.com
+# sudo  docker login --username AWS -p $(aws ecr get-login-password --region us-east-1)  https://491085386200.dkr.ecr.us-east-1.amazonaws.com
 # sudo docker build -t odoo-factory .
 # sudo docker tag odoo-factory:latest 023481417683.dkr.ecr.us-east-1.amazonaws.com/odoo-factory:latest
-# sudo docker push 023481417683.dkr.ecr.us-east-1.amazonaws.com/odoo-factory:latest
+    # sudo docker push 023481417683.dkr.ecr.us-east-1.amazonaws.com/odoo-factory:latest
 # sudo docker run --name odoo-factory-0 --network docker_default -p 8069:8069 -p 8071:8071 -p 8072:8072   -e DB_HOST=postgres   -e DB_PORT=5432   -e DB_USER=odoo   -e DB_PASSWORD=odoo   odoo-factory
 
 # Some system dependencies
