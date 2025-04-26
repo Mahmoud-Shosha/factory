@@ -9,4 +9,4 @@ RUN apt update && \
 USER odoo
 
 EXPOSE 8069
-ENTRYPOINT ["odoo"]
+ENTRYPOINT ["odoo", "-c", "prod-env.conf"]
