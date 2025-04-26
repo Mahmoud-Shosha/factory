@@ -5,7 +5,7 @@ services:
     command: ["-c", "prod-env.conf", "-i", "factory"]
     restart: always
     ports:
-      - "80:80"
+      - "8069:8069"
     volumes:
       - odoo-poc-fs:/var/lib/odoo
 
