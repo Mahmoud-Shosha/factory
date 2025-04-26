@@ -9,5 +9,5 @@ RUN apt update && \
     pip install  --break-system-packages rlPyCairo
 USER odoo
 
-EXPOSE 8069
+EXPOSE 80
 ENTRYPOINT ["odoo"]
