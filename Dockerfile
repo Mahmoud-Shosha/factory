@@ -1,6 +1,7 @@
 FROM odoo:18
 
-COPY . /poc
+WORKDIR /poc
+COPY . .
 
 USER root
 RUN apt update && \
