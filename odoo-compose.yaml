@@ -2,7 +2,7 @@ services:
   poc:
     build: .
     image: poc:latest
-    command: ["-i", "factory"]
+    command: ["odoo", "-c", "prod-env.conf", "-i", "factory"]
     restart: always
     ports:
       - "80:8069"
