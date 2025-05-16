@@ -6,5 +6,5 @@ source env/bin/activate
 # Run Odoo with auto-reload enabled
 /opt/odoo18/odoo-bin \
   -c local-env.conf \
-  -i factory \
+  -u ev_website \
   --dev=all
