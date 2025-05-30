@@ -1,0 +1,13 @@
+services:
+  poc:
+    build: .
+    image: poc:latest
+    command: ["-c", "prod-env.conf", "-i", "factory"]
+    restart: always
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-poc-fs:/var/lib/odoo
+
+volumes:
+  odoo-poc-fs:

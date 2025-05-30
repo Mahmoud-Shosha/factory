@@ -1,0 +1,29 @@
+- name: Deploy Odoo with Docker in EC2 instance
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Fetch repo updates
+      ansible.builtin.git:
+        repo: https://github.com/Mahmoud-Shosha/factory
+        dest: /home/ubuntu/factory
+        version: HEAD
+        update: yes
+        force: yes
+
+    - name: Clean up (Remove all Docker containers & images)
+      ansible.builtin.shell: |
+        containers=$(docker ps -aq)
+        if [ -n "$containers" ]; then
+          docker stop $containers
+          docker rm -f $containers
+        else
+          echo "No containers to remove."
+        fi
+        docker image prune -a -f
+
+    - name: Build Docker containers
+      shell: docker compose -f /home/ubuntu/factory/odoo-compose.yaml build
+
+    - name: Start Docker containers
+      shell: docker compose -f /home/ubuntu/factory/odoo-compose.yaml up -d

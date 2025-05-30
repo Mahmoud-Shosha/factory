@@ -38,8 +38,8 @@ Odoo version used: Odoo18.
 	6. Install Python dependencies
 	```virtualenv -p python3 env```
 	```source env/bin/activate```
-	```pip install -r /opt/odoo16/requirements.txt```
-	```pip install /opt/odoo17```
+	```pip install -r /opt/odoo18/requirements.txt```
+	```pip install /opt/odoo18```
 	7. Run Odoo server
-	```opt/odoo16/odoo-bin -c local-env.conf -i base```
+	```opt/odoo18/odoo-bin -c local-env.conf -i base```
 	8. Validate that Odoo runs through http://localhost:8069

@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: odoo-18
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - odoo-18-poc-db:/var/lib/postgresql/data
+    networks:
+      - odoo-18-network
+    ports:
+      - "5432:5432"
+
+volumes:
+  odoo-18-poc-db:
+
+networks:
+  odoo-18-network:
+    external: true
