@@ -23,23 +23,30 @@ Odoo version used: Odoo18.
   
 ## Run from sourcecode  (Ubuntu)
 - This is used to run the project for development purposes  
+- Requirements
+  - Postgres DB: Use compose
+  - Odoo source code at /opt/odoo18/
 - Steps  
-	1. Install the system dependencies (Python3, pip, venv, ...)
-	```sudo apt update && sudo apt upgrade```
-	```sudo apt install python3-dev python3-pip python3-wheel python3-venv build-essential libpq-dev libxslt-dev libxml2-dev  libzip-dev libldap2-dev libsasl2-dev libssl-dev ```
-	2. Support right-to-left languages like Arabic
-	```sudo apt install nodejs npm```
-	```sudo npm install -g rtlcss```
-	3. Download Odoo sourcecode
-	```git clone https://www.github.com/odoo/odoo --branch 18.0 --depth 1 /opt/odoo18```
-	4. Clone the repository
-	```git clone https://www.github.com/Mahmoud-Shosha/factory .```
-	5. Change configurations (host, port, username, password) in ```local-env.conf``` file
-	6. Install Python dependencies
-	```virtualenv -p python3 env```
-	```source env/bin/activate```
-	```pip install -r /opt/odoo18/requirements.txt```
-	```pip install /opt/odoo18```
-	7. Run Odoo server
-	```opt/odoo18/odoo-bin -c local-env.conf -i base```
-	8. Validate that Odoo runs through http://localhost:8069
+  - Run postgreesal compose
+      1. Install the system dependencies (Python3, pip, venv, ...)
+      ```sudo apt update && sudo apt upgrade```
+      ```sudo apt install python3-dev python3-pip python3-wheel python3-venv build-essential libpq-dev libxslt-dev libxml2-dev  libzip-dev libldap2-dev libsasl2-dev libssl-dev ```
+      2. Support right-to-left languages like Arabic
+      ```sudo apt install nodejs npm```
+      ```sudo npm install -g rtlcss```
+      3. Download Odoo sourcecode
+      ```git clone https://www.github.com/odoo/odoo --branch 18.0 --depth 1 /opt/odoo18```
+      4. Clone the repository
+      ```git clone https://www.github.com/Mahmoud-Shosha/factory .```
+      5. Change DB configurations (host, port, username, password) in ```dev-ubuntu/env.conf``` file
+      6. Install Python dependencies
+        ```cd run-profiles/dev-ubuntu/```
+      ```virtualenv -p python3 env```
+      ```source env/bin/activate```
+      ```pip install -r /opt/odoo18/requirements.txt```
+      ```pip install /opt/odoo18```
+      7. Run Odoo server
+      ```/opt/odoo18/odoo-bin -c env.conf -i factory```
+      8. Validate that Odoo runs through http://localhost:8069
+
+

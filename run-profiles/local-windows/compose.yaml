@@ -1,0 +1,25 @@
+services:
+  poc:
+    build: ../
+    image: poc:latest
+    command: ["-c", "local-windows/env.conf", "-i", "factory", "--without-demo=all"]
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+    volumes:
+      - "../data/odoo:/var/lib/odoo"
+
+
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: odoo-18
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - "../data/db:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
