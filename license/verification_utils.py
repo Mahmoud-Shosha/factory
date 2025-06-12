@@ -7,8 +7,9 @@ from cryptography.exceptions import InvalidSignature
 
 from stopping_utils import shutdown
 
-signed_key_path = Path("./signed_key.json")
-public_key_path = Path("./public_key.pem")
+script_dir = Path(__file__).resolve().parent
+signed_key_path = script_dir / "signed_key.json"
+public_key_path = script_dir / "public_key.pem"
 LOG_TAG = ">> EXPERTS-VISION LICENSE >>"
 
 
@@ -40,7 +41,7 @@ def verify_signature(public_key, data, signature):
     try:
         public_key.verify(signature, data, padding.PKCS1v15(), hashes.SHA512())
         # Ensure expiry date, hardware id
-        print(f"{LOG_TAG} Signature is valid")
+        print(f"{LOG_TAG} ✅ License is valid")
     except InvalidSignature:
-        print(f"{LOG_TAG} Signature is invalid")
+        print(f"{LOG_TAG} ❌ License is invalid")
         shutdown()

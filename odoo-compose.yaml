@@ -1,8 +1,8 @@
 services:
-  poc:
+  ev-odoo:
     build: .
     image: poc:latest
-    command: ["-c", "prod-env.conf", "-i", "factory"]
+    command: ["-c", "env.conf", "-i", "factory"]
     restart: always
     ports:
       - "8069:8069"

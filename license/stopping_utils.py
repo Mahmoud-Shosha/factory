@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 import signal
 import time
 
@@ -56,14 +57,14 @@ def shutdown():
     print(f"{LOG_TAG} Shutdown network processes including Odoo ...")
     pids = get_listening_pids()
     print(pids)
-    # if not pids:
-    #     print(f"{LOG_TAG} No processes listening on network ports")
-    # else:
-    #     remaining = kill_processes_gracefully(pids)
-    #     if not remaining:
-    #         print(f"{LOG_TAG} All processes terminated gracefully")
-    #     else:
-    #         force_kill(remaining)
-    #         print(f"{LOG_TAG} All processes terminated")
-    # print(f"{LOG_TAG} Exit container ...")
-    # sys.exit(1)
+    if not pids:
+        print(f"{LOG_TAG} No processes listening on network ports")
+    else:
+        remaining = kill_processes_gracefully(pids)
+        if not remaining:
+            print(f"{LOG_TAG} All processes terminated gracefully")
+        else:
+            force_kill(remaining)
+            print(f"{LOG_TAG} All processes terminated")
+    print(f"{LOG_TAG} Exit container ...")
+    sys.exit(1)

@@ -1,5 +1,5 @@
 services:
-  ev-odoo:
+  odoo:
     build: ../../
     image: ev-odoo:latest
     command: ["-c", "env.conf", "-i", "factory"]
@@ -10,8 +10,9 @@ services:
       - "8069:8069"
     volumes:
       - "./data/odoo:/var/lib/odoo"
+      - "../../signed_key.json:/ev-odoo/license/signed_key.json"
 
-  ev-odoo-postgres:
+  postgres:
     image: postgres:15
     restart: always
     environment:
