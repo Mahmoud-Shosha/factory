@@ -10,7 +10,7 @@ services:
       - "8069:8069"
     volumes:
       - "./data/odoo:/var/lib/odoo"
-      - "../../signed_key.json:/ev-odoo/license/signed_key.json"
+      - "../../signed_key:/ev-odoo/signed_key"
 
   postgres:
     image: postgres:15

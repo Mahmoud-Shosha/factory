@@ -66,4 +66,9 @@ def sign_data(key, dest_file):
 
 if __name__ == "__main__":
     # generate_key_pair()
-    sign_data(b"My license data or secure string, Works !!!!", "signed_key.json")
+    key = (b"{"
+           b"'company_id': 'ebrahem_factory',"
+           b"'host_id': 'CDD9524A-7CAD-4CFE-8259-94B47FFE44E2',"
+           b"'expiry': '20-06-2025'"
+           b"}")
+    sign_data(key, "signed_key.json")
