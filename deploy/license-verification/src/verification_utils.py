@@ -10,9 +10,9 @@ from cryptography.exceptions import InvalidSignature
 from stopping_utils import shutdown
 
 script_dir = Path(__file__).resolve().parent
-signed_key_path = Path("/ev-odoo/signed_key/signed_key.json")
-public_key_path = script_dir / "public_key.pem"
-host_id_path = script_dir / "host_id"
+signed_key_path = Path("/ev-odoo/license/signed_key.json")
+public_key_path = script_dir.parent / "resources/public_key.pem"
+host_id_path = script_dir.parent / "resources/host_id"
 saved_time_path = Path("/var/lib/odoo/saved_time")
 LOG_TAG = ">> EXPERTS-VISION LICENSE >>"
 
