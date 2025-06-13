@@ -10,7 +10,7 @@ RUN apt update && \
 WORKDIR /ev-odoo
 
 COPY custom-addons custom-addons
-COPY license license
+COPY license-verification license
 COPY entrypoint.sh .
 COPY run-profiles/dev-ubuntu/env.conf .
 COPY run-profiles/local-windows/env.conf .

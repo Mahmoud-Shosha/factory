@@ -59,4 +59,4 @@ Thumbs.db
 *.swn
 
 # internal scripts
-run_dev.sh
+data/
