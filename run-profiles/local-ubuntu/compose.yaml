@@ -1,0 +1,25 @@
+services:
+  odoo:
+    build: ../../
+    image: ev-odoo:latest
+    command: ["-c", "env.conf", "-i", "factory"]
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+    volumes:
+      - "./data/odoo:/var/lib/odoo"
+      - "../../signed_key:/ev-odoo/signed_key"
+
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - "./data/db:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"

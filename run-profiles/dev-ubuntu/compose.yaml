@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - "./data/db:/var/lib/postgresql/data"
+    networks:
+      - postgres-net
+    ports:
+      - "5432:5432"
+
+
+networks:
+  postgres-net:
