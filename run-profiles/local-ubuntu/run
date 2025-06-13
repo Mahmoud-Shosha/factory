@@ -3,13 +3,13 @@
 NAME_SPACE="ev-odoo-local-ubuntu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-#echo "This will create a Odoo & Postgres Docker containers under namespace $NAME_SPACE"
-#read -p "Type 'ok' to continue: " user_input
+echo "This will create a Odoo & Postgres Docker containers under namespace $NAME_SPACE"
+read -p "Type 'ok' to continue: " user_input
 
-#if [[ "$user_input" == "ok" ]]; then
+if [[ "$user_input" == "ok" ]]; then
 docker-compose -f $SCRIPT_DIR/compose.yaml -p "$NAME_SPACE" down
 docker-compose -f $SCRIPT_DIR/compose.yaml -p "$NAME_SPACE" up -d
-#else
-#    echo "Aborted"
-#    exit 1
-#fi
+else
+   echo "Aborted"
+   exit 1
+fi
