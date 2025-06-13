@@ -1,17 +1,17 @@
 services:
-  ev-odoo:
-    build: ../../
+  odoo:
     image: ev-odoo:latest
-    command: ["-c", "env.conf", "-i", "factory"]
+    command: ["-c", "./run-profiles/local-windows/env.conf", "-i", "factory", "--without-demo", "all"]
     restart: always
     depends_on:
       - postgres
     ports:
       - "8069:8069"
     volumes:
-      - "./data/odoo:/var/lib/odoo"
+      - "../../data/ebrahem_factory/odoo:/var/lib/odoo"
+      - "../../license:/ev-odoo/license"
 
-  ev-odoo-postgres:
+  postgres:
     image: postgres:15
     restart: always
     environment:
@@ -19,6 +19,6 @@ services:
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
     volumes:
-      - "./data/db:/var/lib/postgresql/data"
+      - "../../data/ebrahem_factory/db:/var/lib/postgresql/data"
     ports:
       - "5432:5432"

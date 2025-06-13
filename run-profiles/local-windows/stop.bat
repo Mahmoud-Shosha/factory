@@ -1,6 +1,6 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\banner.ps1"
-docker compose -f .\compose.yaml down
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0banner.ps1"
+docker compose -f .\compose.yaml -p "ev-odoo-local-windows" down
 
 :checkloop
 echo Stopping Experts Vision Odoo ...

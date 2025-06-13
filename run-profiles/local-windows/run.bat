@@ -1,6 +1,7 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\banner.ps1"
-docker compose -f .\compose.yaml up -d
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0banner.ps1"
+docker compose -f .\compose.yaml -p "ev-odoo-local-windows" down
+docker compose -f .\compose.yaml -p "ev-odoo-local-windows" up -d
 
 :checkloop
 curl --silent --fail http://localhost:8069 >nul
