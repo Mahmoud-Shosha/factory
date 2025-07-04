@@ -1,14 +1,26 @@
 {
-    'name': 'Experts Vision',
+    'name': 'EV Accounting',
     'version': '18.0.1.0.0',
     'category': 'Genral',
-    'summary': 'Experts Vision ERP starter',
+    'summary': 'Experts Vision accounting module ',
     'description': """
-        This module provides features for managing basic ERPs in Odoo.
+        This is an accounting module manage the basic accounting workflows
     """,
     'author': 'Experts Vision Company',
     'website': 'https://www.expertsvision.com',
-    'depends': ['base', 'stock', 'purchase','sale_management', 'ev_accounting'],
+
+    'depends': [
+    # accounting modules 
+    'accounting_pdf_reports',
+    'om_account_accountant',
+    'om_account_asset',
+    'om_account_budget',
+    'om_account_daily_reports',
+    'om_account_followup',
+    'om_fiscal_year',
+    'om_recurring_payments'
+    # note that these modules depend on mail, account
+    ],
     'data': [],
     'demo': [],
     'application': False,
